@@ -1,0 +1,25 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import OwnerList from './components/OwnerList';
+// Importe aqui seus componentes de Formulário e de Pets quando criar
+
+function App() {
+  return (
+    <Router>
+      <div className="App" style={{ padding: '20px' }}>
+        <nav>
+          <Link to="/owners" style={{ marginRight: '10px' }}>Donos</Link>
+          <Link to="/pets">Pets</Link>
+        </nav>
+        <hr />
+        <Routes>
+          <Route path="/owners" element={<OwnerList />} />
+          {/* Adicione as rotas de Pets e Formulários aqui */}
+          <Route path="/" element={<h1>Bem-vindo à Clínica Veterinária</h1>} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
